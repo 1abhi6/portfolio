@@ -1,4 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/** --------------------------------------------------
+Author       : Abhishek Gupta
+Template Name: portfolio template
+Version      : 1.0
+* -------------------------------------------------  */
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +21,8 @@ html {
   scroll-behavior: smooth;
 }
 
-.fas, .fab {
+.fas,
+.fab {
   margin-right: 0.5rem;
 }
 
@@ -71,7 +77,7 @@ html {
   font-size: 1.8rem;
   color: #fff;
   text-transform: capitalize;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
   border-radius: .5rem;
@@ -116,7 +122,9 @@ html {
 
 .main_project_div {
   background-color: #45567d;
-  height: 140vh;
+  height: auto;
+  width: 100vw;
+  overflow-y: scroll;
 }
 
 .main_project_div .second_project_div {
@@ -140,7 +148,7 @@ html {
 
 .main_project_div .second_project_div h1 {
   font-size: 4rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0 auto 6rem auto;
   color: #fff;
   border-bottom: 0.1rem solid #fff;
@@ -157,7 +165,7 @@ html {
   cursor: pointer;
   text-decoration: none;
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .main_project_div .second_project_div .show_all_btn:hover {
@@ -212,7 +220,7 @@ html {
   padding: 1.5rem 0rem;
   color: #fff;
   font-size: 2rem;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .main_project_div .second_project_div .project_grid .project_card_div p .code {
@@ -237,11 +245,12 @@ footer {
           flex-direction: column;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  height: 50vh;
+  min-height: 50vh;
+  overflow: hidden;
   background-color: #000;
   background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
   color: #fff;
-  font-family: "Roboto", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 footer h1 {
@@ -317,7 +326,6 @@ footer .social_icons a:hover {
   }
   .main_project_div {
     background-color: #45567d;
-    height: 270vh;
   }
   .main_project_div .second_project_div h1 {
     font-size: 3.5rem;
@@ -394,7 +402,6 @@ footer .social_icons a:hover {
   }
   .main_project_div {
     background-color: #45567d;
-    height: 200vh;
   }
   .main_project_div .second_project_div h1 {
     font-size: 3.5rem;
@@ -471,7 +478,6 @@ footer .social_icons a:hover {
   }
   .main_project_div {
     background-color: #45567d;
-    height: 210vh;
   }
   .main_project_div .second_project_div h1 {
     font-size: 3.5rem;
@@ -548,7 +554,6 @@ footer .social_icons a:hover {
   }
   .main_project_div {
     background-color: #45567d;
-    height: 130vh;
   }
   .main_project_div .second_project_div h1 {
     font-size: 4.5rem;
