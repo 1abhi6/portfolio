@@ -1,6 +1,10 @@
+/** --------------------------------------------------
+Author       : Abhishek Gupta
+Template Name: portfolio template
+Version      : 1.0
+* -------------------------------------------------  */
 // Google font 
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-@import "mobile";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 // Importing variables
 @import "variables";
 @import "mixin";
@@ -16,14 +20,14 @@
 	box-sizing: inherit;
 }
 
-
-
 // Common styling 
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
 }
-.fas,.fab{
+
+.fas,
+.fab {
 	margin-right: 0.5rem;
 }
 
@@ -32,7 +36,6 @@ html {
 	background-color: $primary_color;
 	@include flex_box(flex-end,
 	row);
-
 	height: 5rem;
 	ul {
 		@include flex_box(center,
@@ -59,10 +62,7 @@ html {
 	}
 }
 
-
 // Nav bar  Ends 
-
-
 // Landing Page 
 .landing {
 	height: 100vh;
@@ -83,7 +83,9 @@ html {
 // Project Cards
 .main_project_div {
 	background-color: $second_color;
-	height: 140vh;
+	height: auto;
+	width:100vw;
+	overflow-y: scroll;
 	.second_project_div {
 		@include flex_box(center,
 		column);
@@ -126,34 +128,30 @@ html {
 			max-width: 128rem;
 			margin: 0 auto;
 			margin-bottom: 6rem;
-		
 			.project_card_div {
 				&:hover .code {
 					color: #ff7f50;
 					cursor: pointer;
-				  }
+				}
 				img {
 					height: 38.9rem;
 					display: block;
 					width: 100%;
 					object-fit: cover;
 				}
-				p{
+				p {
 					width: 100%;
 					height: 3vh;
 					background-color: rgb(41, 41, 41);
 					text-align: center;
 					padding: 1.5rem 0rem;
-					color:$text_color;
+					color: $text_color;
 					font-size: 2rem;
 					font-family: $font-familiy;
-
-
 					.code {
 						color: rgb(41, 41, 41);
 						transition: color 0.3s ease-out;
-						
-					}	  
+					}
 				}
 			}
 		}
@@ -161,27 +159,25 @@ html {
 }
 
 // Project Cards Ends
-
 // Footer starts
-
-footer{
-	@include flex_box(center, column);
-	height:50vh;
+footer {
+	@include flex_box(center,
+	column);
+	min-height: 50vh;
+	overflow: hidden;
 	@include bg_color();
 	color: $text_color;
 	font-family: $font-familiy;
-
-	h1{
+	h1 {
 		font-size: 7rem;
 		margin-bottom: 0.7rem;
 	}
-	p{
+	p {
 		font-size: 2rem;
 		margin-bottom: 10rem !important;
 	}
-
-	.social_icons{
-		a{
+	.social_icons {
+		a {
 			color: $text_color;
 			text-decoration: none;
 			margin: 0rem 5rem;
@@ -189,28 +185,28 @@ footer{
 			padding: 1rem 1.5rem;
 			border-radius: 0.5rem;
 			transition: all 0.3s ease-out;
-			&:hover{
-				color:$main_gray;
+			&:hover {
+				color: $main_gray;
 				background-color: $text_color;
 			}
-			
 		}
 	}
 }
 
 // ******************************
+// ******************************
+// ******************************
+// ******************************
+
+
+
 
 // This section contains all the media query to make it responsive 
-
-@media (min-width:290px) and (max-width:425px){
-
+@media (min-width:290px) and (max-width:425px) {
 	html {
 		font-size: 40% !important;
 	}
-
-
 	// Nav Bar 
-
 	.navbar {
 		background-color: $primary_color;
 		@include flex_box(center,
@@ -234,59 +230,46 @@ footer{
 		}
 	}
 	// Landing Page 
-.landing {
-	h1 {
-		font-size: 5rem;
-		margin-bottom: 2rem;
-	}
-	p {
-		font-size: 2rem;
-	}
-}
-
-//  Project Card 
-
-.main_project_div {
-	background-color: $second_color;
-	height: 270vh;
-	.second_project_div {
+	.landing {
 		h1 {
-			font-size: 3.5rem;
-			text-align: center;
-			border-bottom: 0.2rem solid $text_color;
+			font-size: 5rem;
+			margin-bottom: 2rem;
+		}
+		p {
+			font-size: 2rem;
+		}
+	}
+	//  Project Card 
+	.main_project_div {
+		background-color: $second_color;
+		// height: 270vh;
+		.second_project_div {
+			h1 {
+				font-size: 3.5rem;
+				text-align: center;
+				border-bottom: 0.2rem solid $text_color;
+			}
+		}
+	}
+	// Footer 
+	footer {
+		h1 {
+			font-size: 4.5rem;
+			margin-bottom: 1.5rem;
+		}
+		.social_icons {
+			@include flex_box(center,
+			column);
 		}
 	}
 }
 
-
-// Footer 
-
-footer{
-	h1{
-		font-size: 4.5rem;
-		margin-bottom: 1.5rem;
-	}
-
-	.social_icons{
-		@include flex_box(center,column);
-	}
-}
-
-}
-
-
 // This is for tablet device 
-
-
-@media (min-width:426px) and (max-width:768px){
-
+@media (min-width:426px) and (max-width:768px) {
 	html {
 		font-size: 50% !important;
 	}
-
-
 	// Nav Bar 
-
 	.navbar {
 		background-color: $primary_color;
 		@include flex_box(center,
@@ -310,59 +293,46 @@ footer{
 		}
 	}
 	// Landing Page 
-.landing {
-	h1 {
-		font-size: 5rem;
-		margin-bottom: 2rem;
-	}
-	p {
-		font-size: 2rem;
-	}
-}
-
-//  Project Card 
-
-.main_project_div {
-	background-color: $second_color;
-	height: 200vh;
-	.second_project_div {
+	.landing {
 		h1 {
-			font-size: 3.5rem;
-			text-align: center;
-			border-bottom: 0.2rem solid $text_color;
+			font-size: 5rem;
+			margin-bottom: 2rem;
+		}
+		p {
+			font-size: 2rem;
+		}
+	}
+	//  Project Card 
+	.main_project_div {
+		background-color: $second_color;
+		// height: 200vh;
+		.second_project_div {
+			h1 {
+				font-size: 3.5rem;
+				text-align: center;
+				border-bottom: 0.2rem solid $text_color;
+			}
+		}
+	}
+	// Footer 
+	footer {
+		h1 {
+			font-size: 4.5rem;
+			margin-bottom: 1.5rem;
+		}
+		.social_icons {
+			@include flex_box(center,
+			column);
 		}
 	}
 }
 
-
-// Footer 
-
-footer{
-	h1{
-		font-size: 4.5rem;
-		margin-bottom: 1.5rem;
-	}
-
-	.social_icons{
-		@include flex_box(center,column);
-	}
-}
-
-}
-
-
 // This media query is for laptops 
-
-
-@media (min-width:769px) and (max-width:1036px){
-
+@media (min-width:769px) and (max-width:1036px) {
 	html {
 		font-size: 60% !important;
 	}
-
-
 	// Nav Bar 
-
 	.navbar {
 		background-color: $primary_color;
 		@include flex_box(center,
@@ -386,58 +356,46 @@ footer{
 		}
 	}
 	// Landing Page 
-.landing {
-	h1 {
-		font-size: 5rem;
-		margin-bottom: 2rem;
-	}
-	p {
-		font-size: 2rem;
-	}
-}
-
-//  Project Card 
-
-.main_project_div {
-	background-color: $second_color;
-	height: 210vh;
-	.second_project_div {
+	.landing {
 		h1 {
-			font-size: 3.5rem;
-			text-align: center;
-			border-bottom: 0.2rem solid $text_color;
+			font-size: 5rem;
+			margin-bottom: 2rem;
+		}
+		p {
+			font-size: 2rem;
+		}
+	}
+	//  Project Card 
+	.main_project_div {
+		background-color: $second_color;
+		// height: 210vh;
+		.second_project_div {
+			h1 {
+				font-size: 3.5rem;
+				text-align: center;
+				border-bottom: 0.2rem solid $text_color;
+			}
+		}
+	}
+	// Footer 
+	footer {
+		h1 {
+			font-size: 4.5rem;
+			margin-bottom: 1.5rem;
+		}
+		.social_icons {
+			@include flex_box(center,
+			column);
 		}
 	}
 }
 
-
-// Footer 
-
-footer{
-	h1{
-		font-size: 4.5rem;
-		margin-bottom: 1.5rem;
-	}
-
-	.social_icons{
-		@include flex_box(center,column);
-	}
-}
-
-}
-
 // This media query is for larger laptops 
-
-
-@media (min-width:1037px) and (max-width:1440px){
-
+@media (min-width:1037px) and (max-width:1440px) {
 	html {
 		font-size: 50% !important;
 	}
-
-
 	// Nav Bar 
-
 	.navbar {
 		background-color: $primary_color;
 		@include flex_box(center,
@@ -461,42 +419,36 @@ footer{
 		}
 	}
 	// Landing Page 
-.landing {
-	h1 {
-		font-size: 7rem;
-		margin-bottom: 2rem;
-	}
-	p {
-		font-size: 4rem;
-	}
-}
-
-//  Project Card 
-
-.main_project_div {
-	background-color: $second_color;
-	height: 130vh;
-	.second_project_div {
+	.landing {
 		h1 {
-			font-size: 4.5rem;
-			text-align: center;
-			border-bottom: 0.2rem solid $text_color;
+			font-size: 7rem;
+			margin-bottom: 2rem;
+		}
+		p {
+			font-size: 4rem;
 		}
 	}
-}
-
-
-// Footer 
-
-footer{
-	h1{
-		font-size: 6.5rem;
-		margin-bottom: 1.5rem;
+	//  Project Card 
+	.main_project_div {
+		background-color: $second_color;
+		// height: 130vh;
+		.second_project_div {
+			h1 {
+				font-size: 4.5rem;
+				text-align: center;
+				border-bottom: 0.2rem solid $text_color;
+			}
+		}
 	}
-
-	.social_icons{
-		@include flex_box(center,column);
+	// Footer 
+	footer {
+		h1 {
+			font-size: 6.5rem;
+			margin-bottom: 1.5rem;
+		}
+		.social_icons {
+			@include flex_box(center,
+			column);
+		}
 	}
-}
-
 }
