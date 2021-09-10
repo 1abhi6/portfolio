@@ -1,0 +1,15 @@
+// Mixin
+@mixin flex_box($just_content,
+$dir) {
+	display: flex;
+	justify-content: $just_content;
+	align-items: center;
+	flex-direction: $dir;
+	flex-wrap: wrap;
+}
+
+
+@mixin bg_color {
+	background-color: #000;
+	background-image: linear-gradient( 62deg, #3a3d40 0%, #181719 100%);
+}

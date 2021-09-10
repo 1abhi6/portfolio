@@ -1,0 +1,502 @@
+// Google font 
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import "mobile";
+// Importing variables
+@import "variables";
+@import "mixin";
+// CSS Reset 
+* {
+	margin: 0;
+	padding: 0;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+
+
+// Common styling 
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+.fas,.fab{
+	margin-right: 0.5rem;
+}
+
+// Nav bar 
+.navbar {
+	background-color: $primary_color;
+	@include flex_box(flex-end,
+	row);
+
+	height: 5rem;
+	ul {
+		@include flex_box(center,
+		row);
+		li {
+			list-style: none;
+			padding: 0rem 2.4rem;
+			transition: all 0.3s ease;
+			a {
+				padding: .9rem 2rem;
+				text-decoration: none;
+				font-size: 1.8rem;
+				color: $text_color;
+				text-transform: capitalize;
+				font-family: $font-familiy;
+				transition: all 0.3s ease-out;
+				border-radius: .5rem;
+				&:hover {
+					background: $text_color;
+					color: $primary_color;
+				}
+			}
+		}
+	}
+}
+
+
+// Nav bar  Ends 
+
+
+// Landing Page 
+.landing {
+	height: 100vh;
+	@include flex_box(center,
+	column);
+	@include bg_color;
+	h1 {
+		font-size: 6rem;
+		color: $text_color;
+	}
+	p {
+		font-size: 3rem;
+		color: $primary_color;
+		text-transform: capitalize;
+	}
+}
+
+// Project Cards
+.main_project_div {
+	background-color: $second_color;
+	height: 140vh;
+	.second_project_div {
+		@include flex_box(center,
+		column);
+		padding: 10rem 2rem;
+		h1 {
+			font-size: 4rem;
+			font-family: $font-familiy;
+			margin: 0 auto 6rem auto;
+			color: $text_color;
+			border-bottom: 0.1rem solid $text_color;
+		}
+		.show_all_btn {
+			display: inline-block;
+			padding: 1rem 2rem;
+			border-radius: 0.2rem;
+			font-size: 2rem;
+			background: $main_gray;
+			transition: all 0.3s ease-out;
+			cursor: pointer;
+			text-decoration: none;
+			color: $text_color;
+			font-family: $font-familiy;
+		}
+		.show_all_btn:hover {
+			background: $primary_color;
+		}
+		.show_all_btn:hover>i {
+			transform: translateX(0.2rem);
+		}
+		.show_all_btn>i {
+			margin-left: 1rem;
+			transform: translateX(0);
+			transition: transform 0.3s ease-out;
+		}
+		.project_grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
+			grid-gap: 4rem;
+			width: 100%;
+			max-width: 128rem;
+			margin: 0 auto;
+			margin-bottom: 6rem;
+		
+			.project_card_div {
+				&:hover .code {
+					color: #ff7f50;
+					cursor: pointer;
+				  }
+				img {
+					height: 38.9rem;
+					display: block;
+					width: 100%;
+					object-fit: cover;
+				}
+				p{
+					width: 100%;
+					height: 3vh;
+					background-color: rgb(41, 41, 41);
+					text-align: center;
+					padding: 1.5rem 0rem;
+					color:$text_color;
+					font-size: 2rem;
+					font-family: $font-familiy;
+
+
+					.code {
+						color: rgb(41, 41, 41);
+						transition: color 0.3s ease-out;
+						
+					}	  
+				}
+			}
+		}
+	}
+}
+
+// Project Cards Ends
+
+// Footer starts
+
+footer{
+	@include flex_box(center, column);
+	height:50vh;
+	@include bg_color();
+	color: $text_color;
+	font-family: $font-familiy;
+
+	h1{
+		font-size: 7rem;
+		margin-bottom: 0.7rem;
+	}
+	p{
+		font-size: 2rem;
+		margin-bottom: 10rem !important;
+	}
+
+	.social_icons{
+		a{
+			color: $text_color;
+			text-decoration: none;
+			margin: 0rem 5rem;
+			font-size: 2.5rem;
+			padding: 1rem 1.5rem;
+			border-radius: 0.5rem;
+			transition: all 0.3s ease-out;
+			&:hover{
+				color:$main_gray;
+				background-color: $text_color;
+			}
+			
+		}
+	}
+}
+
+// ******************************
+
+// This section contains all the media query to make it responsive 
+
+@media (min-width:290px) and (max-width:425px){
+
+	html {
+		font-size: 40% !important;
+	}
+
+
+	// Nav Bar 
+
+	.navbar {
+		background-color: $primary_color;
+		@include flex_box(center,
+		row);
+		ul {
+			li {
+				list-style: none;
+				padding: 0rem 2rem;
+				transition: all 0.3s ease;
+				a {
+					padding: .5rem 1.5rem;
+					text-decoration: none;
+					font-size: 1.8rem;
+					border-radius: .5rem;
+					&:hover {
+						background: $text_color;
+						color: $primary_color;
+					}
+				}
+			}
+		}
+	}
+	// Landing Page 
+.landing {
+	h1 {
+		font-size: 5rem;
+		margin-bottom: 2rem;
+	}
+	p {
+		font-size: 2rem;
+	}
+}
+
+//  Project Card 
+
+.main_project_div {
+	background-color: $second_color;
+	height: 270vh;
+	.second_project_div {
+		h1 {
+			font-size: 3.5rem;
+			text-align: center;
+			border-bottom: 0.2rem solid $text_color;
+		}
+	}
+}
+
+
+// Footer 
+
+footer{
+	h1{
+		font-size: 4.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.social_icons{
+		@include flex_box(center,column);
+	}
+}
+
+}
+
+
+// This is for tablet device 
+
+
+@media (min-width:426px) and (max-width:768px){
+
+	html {
+		font-size: 50% !important;
+	}
+
+
+	// Nav Bar 
+
+	.navbar {
+		background-color: $primary_color;
+		@include flex_box(center,
+		row);
+		ul {
+			li {
+				list-style: none;
+				padding: 0rem 2rem;
+				transition: all 0.3s ease;
+				a {
+					padding: .5rem 1.5rem;
+					text-decoration: none;
+					font-size: 1.8rem;
+					border-radius: .5rem;
+					&:hover {
+						background: $text_color;
+						color: $primary_color;
+					}
+				}
+			}
+		}
+	}
+	// Landing Page 
+.landing {
+	h1 {
+		font-size: 5rem;
+		margin-bottom: 2rem;
+	}
+	p {
+		font-size: 2rem;
+	}
+}
+
+//  Project Card 
+
+.main_project_div {
+	background-color: $second_color;
+	height: 200vh;
+	.second_project_div {
+		h1 {
+			font-size: 3.5rem;
+			text-align: center;
+			border-bottom: 0.2rem solid $text_color;
+		}
+	}
+}
+
+
+// Footer 
+
+footer{
+	h1{
+		font-size: 4.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.social_icons{
+		@include flex_box(center,column);
+	}
+}
+
+}
+
+
+// This media query is for laptops 
+
+
+@media (min-width:769px) and (max-width:1036px){
+
+	html {
+		font-size: 60% !important;
+	}
+
+
+	// Nav Bar 
+
+	.navbar {
+		background-color: $primary_color;
+		@include flex_box(center,
+		row);
+		ul {
+			li {
+				list-style: none;
+				padding: 0rem 2rem;
+				transition: all 0.3s ease;
+				a {
+					padding: .5rem 1.5rem;
+					text-decoration: none;
+					font-size: 1.8rem;
+					border-radius: .5rem;
+					&:hover {
+						background: $text_color;
+						color: $primary_color;
+					}
+				}
+			}
+		}
+	}
+	// Landing Page 
+.landing {
+	h1 {
+		font-size: 5rem;
+		margin-bottom: 2rem;
+	}
+	p {
+		font-size: 2rem;
+	}
+}
+
+//  Project Card 
+
+.main_project_div {
+	background-color: $second_color;
+	height: 210vh;
+	.second_project_div {
+		h1 {
+			font-size: 3.5rem;
+			text-align: center;
+			border-bottom: 0.2rem solid $text_color;
+		}
+	}
+}
+
+
+// Footer 
+
+footer{
+	h1{
+		font-size: 4.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.social_icons{
+		@include flex_box(center,column);
+	}
+}
+
+}
+
+// This media query is for larger laptops 
+
+
+@media (min-width:1037px) and (max-width:1440px){
+
+	html {
+		font-size: 50% !important;
+	}
+
+
+	// Nav Bar 
+
+	.navbar {
+		background-color: $primary_color;
+		@include flex_box(center,
+		row);
+		ul {
+			li {
+				list-style: none;
+				padding: 0rem 2rem;
+				transition: all 0.3s ease;
+				a {
+					padding: .5rem 1.5rem;
+					text-decoration: none;
+					font-size: 2.5rem;
+					border-radius: .5rem;
+					&:hover {
+						background: $text_color;
+						color: $primary_color;
+					}
+				}
+			}
+		}
+	}
+	// Landing Page 
+.landing {
+	h1 {
+		font-size: 7rem;
+		margin-bottom: 2rem;
+	}
+	p {
+		font-size: 4rem;
+	}
+}
+
+//  Project Card 
+
+.main_project_div {
+	background-color: $second_color;
+	height: 130vh;
+	.second_project_div {
+		h1 {
+			font-size: 4.5rem;
+			text-align: center;
+			border-bottom: 0.2rem solid $text_color;
+		}
+	}
+}
+
+
+// Footer 
+
+footer{
+	h1{
+		font-size: 6.5rem;
+		margin-bottom: 1.5rem;
+	}
+
+	.social_icons{
+		@include flex_box(center,column);
+	}
+}
+
+}
