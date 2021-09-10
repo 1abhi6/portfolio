@@ -24,6 +24,7 @@ Version      : 1.0
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 .fas,
@@ -174,7 +175,7 @@ footer {
 	}
 	p {
 		font-size: 2rem;
-		margin-bottom: 10rem !important;
+		margin-bottom: 6rem !important;
 	}
 	.social_icons {
 		a {
